@@ -1,4 +1,11 @@
-import { Suspense, useCallback, useEffect, useMemo, useRef, useState } from "react";
+import {
+  Suspense,
+  useCallback,
+  useEffect,
+  useMemo,
+  useRef,
+  useState
+} from "react";
 import { useAgent } from "agents/react";
 import { useAgentChat } from "@cloudflare/ai-chat/react";
 import { getToolName, isToolUIPart, type UIMessage } from "ai";
@@ -128,7 +135,10 @@ const WORKFLOW_STEPS = ["plan", "draft", "revise", "save"] as const;
 
 function stepIndex(step?: string): number {
   if (!step) return -1;
-  const normalized = step === "queued" ? -1 : WORKFLOW_STEPS.indexOf(step as (typeof WORKFLOW_STEPS)[number]);
+  const normalized =
+    step === "queued"
+      ? -1
+      : WORKFLOW_STEPS.indexOf(step as (typeof WORKFLOW_STEPS)[number]);
   return normalized;
 }
 
@@ -219,10 +229,7 @@ function MemoryPanel({
                           className="text-kumo-brand animate-pulse"
                         />
                       ) : (
-                        <CircleIcon
-                          size={14}
-                          className="text-kumo-inactive"
-                        />
+                        <CircleIcon size={14} className="text-kumo-inactive" />
                       )}
                       <Text
                         size="xs"

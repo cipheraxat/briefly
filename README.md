@@ -6,12 +6,12 @@ Chat for quick answers. Ask for a brief and a durable Workflow plans, drafts, re
 
 ## Assignment checklist
 
-| Requirement | Implementation |
-| --- | --- |
-| LLM | Workers AI `@cf/meta/llama-3.3-70b-instruct-fp8-fast` (Llama 3.3) |
+| Requirement             | Implementation                                                         |
+| ----------------------- | ---------------------------------------------------------------------- |
+| LLM                     | Workers AI `@cf/meta/llama-3.3-70b-instruct-fp8-fast` (Llama 3.3)      |
 | Workflow / coordination | `BriefingWorkflow` (`AgentWorkflow`) with plan → draft → revise → save |
-| User input | React chat UI (`useAgentChat`) over WebSockets |
-| Memory / state | Chat transcript in SQLite; preferences + saved briefs in agent `state` |
+| User input              | React chat UI (`useAgentChat`) over WebSockets                         |
+| Memory / state          | Chat transcript in SQLite; preferences + saved briefs in agent `state` |
 
 ## Stack
 

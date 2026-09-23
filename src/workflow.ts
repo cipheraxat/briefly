@@ -85,7 +85,9 @@ export class BriefingWorkflow extends AgentWorkflow<
         extractText(result)
       );
       const outline = Array.isArray(parsed.outline)
-        ? parsed.outline.filter((item): item is string => typeof item === "string")
+        ? parsed.outline.filter(
+            (item): item is string => typeof item === "string"
+          )
         : [];
 
       if (!parsed.title || outline.length === 0) {

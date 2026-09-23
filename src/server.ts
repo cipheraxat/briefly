@@ -100,9 +100,7 @@ After startBrief returns, tell the user the brief is running in the background a
               ...this.state.preferences,
               ...(format ? { format } : {}),
               ...(length ? { length } : {}),
-              ...(tone !== undefined
-                ? { tone: tone.trim() || undefined }
-                : {})
+              ...(tone !== undefined ? { tone: tone.trim() || undefined } : {})
             };
             this.setState({
               ...this.state,
@@ -119,10 +117,7 @@ After startBrief returns, tell the user the brief is running in the background a
           description:
             "Start a durable multi-step briefing workflow for a topic. Use when the user asks for a brief, summary, or write-up.",
           inputSchema: z.object({
-            topic: z
-              .string()
-              .min(3)
-              .describe("What the brief should cover")
+            topic: z.string().min(3).describe("What the brief should cover")
           }),
           execute: async ({ topic }) => {
             const instanceId = await this.runWorkflow("BRIEFING_WORKFLOW", {

@@ -7,8 +7,8 @@
     "agents",
     "ai",
     "cloudflare",
-    "workflows",
-    "workers-ai"
+    "workers-ai",
+    "workflows"
   ],
   "license": "MIT",
   "type": "module",
