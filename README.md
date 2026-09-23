@@ -2,6 +2,8 @@
 
 AI briefing agent on Cloudflare for the Agents assignment.
 
+**GitHub:** https://github.com/cipheraxat/briefly
+
 Chat for quick answers. Ask for a brief and a durable Workflow plans, drafts, revises, and saves it. Preferences and finished briefs survive refresh via Durable Object SQLite.
 
 ## Assignment checklist
@@ -24,11 +26,13 @@ Chat for quick answers. Ask for a brief and a durable Workflow plans, drafts, re
 
 ```bash
 npm install
-npx wrangler login   # needed so local Workers AI calls work
+npx wrangler login   # required: local Workers AI uses a remote binding
 npm run dev
 ```
 
 Open the printed local URL (usually http://localhost:5173).
+
+Without `wrangler login` (or `CLOUDFLARE_API_TOKEN`), `npm run dev` and deploy will fail because `ai.remote` is enabled in `wrangler.jsonc`.
 
 ## Demo script (~60 seconds)
 
@@ -40,6 +44,7 @@ Open the printed local URL (usually http://localhost:5173).
 ## Deploy
 
 ```bash
+npx wrangler login
 npm run deploy
 ```
 
